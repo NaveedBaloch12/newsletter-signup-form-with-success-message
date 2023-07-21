@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="stlye.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+
+  <title>Newsletter sign-up </title>
+
+
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="signup_cintanier">
+    <div class="sign_up_svg">
+
+    </div>
+    <div class="singup_text">
+
+      <h1>Stay updated!</h1>
+      <p>Join 60,000+ product managers receiving monthly updates on:</p>
+
+      <div class="bulit_contanier">
+        <div class="bulit_list">
+          <div class="bulit_svg"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+              <g fill="none">
+                <circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155" />
+                <path stroke="#FFF" stroke-width="2" d="M6 11.381 8.735 14 15 8" />
+              </g>
+            </svg></div>
+          <div class="bulit_text">Product discovery and building what matters</div>
+        </div>
+
+        <div class="bulit_list">
+          <div class="bulit_svg"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+              <g fill="none">
+                <circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155" />
+                <path stroke="#FFF" stroke-width="2" d="M6 11.381 8.735 14 15 8" />
+              </g>
+            </svg></div>
+          <div class="bulit_text">Measuring to ensure updates are a success</div>
+        </div>
+
+        <div class="bulit_list">
+          <div class="bulit_svg"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+              <g fill="none">
+                <circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155" />
+                <path stroke="#FFF" stroke-width="2" d="M6 11.381 8.735 14 15 8" />
+              </g>
+            </svg></div>
+          <div class="bulit_text">And much more!</div>
+        </div>
+      </div>
+
+      <div class="input_label_vilidity">
+        <label for="email">Email address</label>
+        <span class="invalid" id="invalid_message">valid email required</span>
+      </div>
+      <input type="email" name="email" id="emailInput" class="email" placeholder="email@company.com">
+
+      <button id="submitButton" type="submit">Subscribe to monthly newsletter</button>
+    </div>
+  </div>
+
+
+  <div class="attribution">
+    Coded by <a href="#">Naveed Hassan</a>.
+  </div>
+</body>
+
+
+
+<script>
+  function isValidEmail(email) {
+    // Email validation logic (using the same isValidEmail function as before)
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  document.getElementById('submitButton').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    var emailInput = document.getElementById('emailInput').value;
+    var invalidMessage = document.getElementById('invalid_message');
+
+    if (isValidEmail(emailInput)) {
+      // Email is valid, redirect to success_page.html with the email as a URL parameter
+      window.location.href = 'success_page.html?email=' + encodeURIComponent(emailInput);
+    } else {
+      // Display the invalid message div
+      invalidMessage.style.display = 'block';
+    }
+  });
+</script>
+
+</html>
